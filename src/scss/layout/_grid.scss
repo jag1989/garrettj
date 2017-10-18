@@ -1,0 +1,28 @@
+.container {
+	@include clearfix;
+	margin: 0 auto;
+	max-width: 75em;
+}
+
+.container-split {
+	display: flex;
+	flex-direction: column;
+	@include breakpoint-12 {
+		flex-direction: row;
+	}
+	.headshots {
+		flex-shrink: 0;
+		margin-bottom: 1rem;
+		@include breakpoint-6 {
+			width: 100%;
+		}
+		@include breakpoint-12 {
+			width: 30%;
+			padding: 0 1rem;
+			margin-bottom: 0;
+		}
+		img {
+			display: block;
+		}
+	}
+}

@@ -1,0 +1,52 @@
+h1 {
+	font-size: 2rem;
+	@include breakpoint-12 {
+		font-size: 3rem;
+	}
+}
+
+h2 {
+	font-size: 1.3rem;
+	@include breakpoint-12 {
+		font-size: 1.6rem;
+	}
+}
+
+h3 {
+	font-size: 1.2rem;
+	@include breakpoint-12 {
+		font-size: 1.4rem;
+	}
+}
+
+.text {
+	&-left {
+		text-align: left;
+	}
+	&-right {
+		text-align: right;
+	}
+	&-center {
+		text-align: center;
+	}
+	&-center--desktop {
+		@include breakpoint-12 {
+			text-align: center;
+		}
+	}
+}
+
+.heading-stack {
+	span {
+		display: block;
+		@include breakpoint-10 {
+			display: inline-block;
+		}
+	}
+	span.join {
+		display: none;
+		@include breakpoint-10 {
+			display: inline-block;
+		}
+	}
+}

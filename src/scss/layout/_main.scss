@@ -1,0 +1,233 @@
+body,
+html {
+	background: $body--colour;
+	color: #595959;
+	font-size: 16px;
+	font-family: $font-family-heading;
+	font-weight: 400;
+	line-height: 1.4;
+	min-height: 100vh;
+	min-width: 100vw;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	header,
+	footer {
+		flex-shrink: 0;
+		flex-grow: 0;
+	}
+	main {
+		flex-grow: 1;
+	}
+}
+
+* {
+	transition: margin $transition--time, padding $transition--time;
+}
+
+main {
+	background-color: $main--colour;
+	margin: 0 0 2rem 0;
+	@include breakpoint-12 {
+		margin-top: 2rem;
+	}
+}
+
+img,
+picture {
+	max-width: 100%;
+	margin: 0 auto;
+}
+
+picture {
+	@include clearfix;
+}
+
+object {
+	pointer-events: none;
+}
+
+.pull-up {
+	margin-top: 0;
+	padding-top: 0;
+}
+
+.box-shadow {
+	@include box-shadow;
+}
+
+.box-shadow-top {
+	@include box-shadow(top);
+}
+
+.content {
+	padding: 0 1rem;
+	>*+* {
+		margin-top: 1rem;
+		margin-bottom: 1rem;
+	}
+	&-flush--top {
+		@include breakpoint-12 {
+			&>*:first-child {
+				margin-top: 0;
+			}
+		}
+	}
+	&-push--top {
+		@include breakpoint-12 {
+			margin-top: 3rem;
+		}
+	}
+}
+
+a {
+	display: inline-block;
+	transition: $transition--time;
+	&,
+	&:visited {
+		color: $link--colour;
+		text-decoration: none;
+	}
+	&.hover-effect {
+		&:hover,
+		&:focus {
+			color: darken($link--colour, 10%);
+			margin-top: -0.25rem;
+		}
+	}
+}
+
+ul {
+	&.list--unstyled {
+		margin: 0;
+		padding: 0;
+		li {
+			list-style: none;
+		}
+	}
+	&.list--inline {
+		display: flex;
+		flex-direction: column;
+		flex-grow: 1;
+		margin: 0 auto;
+		padding: 0;
+		justify-content: space-between;
+		@include breakpoint-10 {
+			flex-direction: row;
+			max-width: 60%;
+		}
+		@include breakpoint-12 {
+			max-width: 50%;
+		}
+		li {
+			padding: 0 1rem;
+			a {
+				display: block;
+			}
+		}
+	}
+	&.list--columns {
+		display: flex;
+		flex-flow: row wrap;
+		margin-left: -1rem;
+		margin-right: -1rem;
+		li {
+			font-weight: 400;
+			font-size: 1.1rem;
+			flex-basis: 100%;
+			padding: 0 1rem;
+			margin-bottom: 0.325rem;
+			@include breakpoint-4 {
+				flex-basis: calc( #{$half} - 2rem);
+			}
+			@include breakpoint-6 {
+				flex-basis: calc( #{$third} - 2rem);
+			}
+			@include breakpoint-7 {
+				flex-basis: calc( #{$quarter} - 2rem);
+			}
+			@include breakpoint-9 {
+				flex-basis: calc( #{$fifth} - 2rem);
+			}
+			@include breakpoint-13 {
+				font-size: 1.2rem;
+				font-weight: 600;
+				flex-grow: 1;
+			}
+		}
+	}
+	&.list--logos {
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		flex-flow: row wrap;
+		text-align: center;
+		margin-left: -1rem;
+		margin-right: -1rem;
+		li {
+			padding: 0 1.5rem;
+			margin-bottom: 1rem;
+			flex-basis: calc(100% - 3rem);
+			@include breakpoint-7 {
+				flex-basis: calc(#{$half} - 3rem);
+			}
+			@include breakpoint-9 {
+				flex-basis: auto;
+			}
+			object,
+			img {
+				max-height: 5rem;
+				max-width: 100%;
+			}
+		}
+	}
+}
+
+.headshots {
+	display: flex;
+	picture {
+		padding: 0;
+		margin: 0;
+		width: 100%;
+		&:not(.medium) {
+			@include breakpoint-6 {
+				display: none;
+			}
+			@include breakpoint-12 {
+				display: block;
+			}
+		}
+		&.medium {
+			display: none;
+			img {
+				width: 100%;
+				height: 479px;
+				object-fit: cover;
+			}
+			@include breakpoint-6 {
+				display: block;
+			}
+			@include breakpoint-12 {
+				display: none;
+			}
+		}
+	}
+}
+
+.impact-space {
+	background-color: $impact-primary-colour;
+	padding: 1.5rem 0;
+	width: 100%;
+	color: #fff;
+	margin-top: 2rem;
+	position: relative;
+	a {
+		color: currentColor;
+	}
+	@include breakpoint-12 {
+		padding-top: 2rem;
+		padding-bottom: 2rem;
+	}
+}
