@@ -9,7 +9,6 @@ self.addEventListener('install', event => {
 				'.',
 				'https://fonts.googleapis.com/css?family=Raleway:500,600,700',
 				'/index.html',
-				'/assets/main.js',
 				'/assets/images/jonathan-garrett-professional.jpg',
 				'/assets/images/jonathan-garrett-japan.jpg',
 				'/assets/images/asvb-logo.svg',
