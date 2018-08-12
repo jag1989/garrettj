@@ -197,12 +197,11 @@
 	</footer>
 
 	<link href="https://fonts.googleapis.com/css?family=Raleway:500,600,700" rel="stylesheet">
+	<script>
+		if ('serviceWorker' in navigator) {
+			navigator.serviceWorker.register('/sw.js');
+		}
+	</script>
 </body>
-
-<script>
-	if ('serviceWorker' in navigator) {
-		navigator.serviceWorker.register('/sw.js');
-	}
-</script>
 
 </html>
