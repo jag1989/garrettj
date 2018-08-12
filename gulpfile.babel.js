@@ -74,3 +74,5 @@ gulp.task('clean-images-dir', () => {
 // Run Tasks
 
 gulp.task('compile', ['css', 'imagemin']);
+
+gulp.task('default', ['compile']);
