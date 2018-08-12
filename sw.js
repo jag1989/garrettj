@@ -1,7 +1,10 @@
-const CACHE = 'garrettj-cache'
+const VERSION = 1.1;
+const CACHE = `garrettj-cache-${VERSION}`;
 
 
 self.addEventListener('install', event => {
+	self.skipWaiting();
+
 	event.waitUntil(
 		caches.open(CACHE)
 		.then(
@@ -11,14 +14,16 @@ self.addEventListener('install', event => {
 				'/index.html',
 				'/assets/images/jonathan-garrett-professional.jpg',
 				'/assets/images/jonathan-garrett-japan.jpg',
+				'/assets/images/aa-logo.png',
+				'/assets/images/afw-logo.svg',
 				'/assets/images/asvb-logo.svg',
-				'/assets/images/ege-logo.svg',
 				'/assets/images/gch-logo.svg',
 				'/assets/images/henshaws-logo.svg',
+				'/assets/images/impact-logo.svg',
 				'/assets/images/longbeds-logo.png',
 				'/assets/images/paradigm-logo.svg',
 				'/assets/images/pinkstones-logo.svg',
-				'/assets/images/samaritans-logo.png'
+				'/assets/images/tht-logo.svg'
 			])
 		)
 	)
